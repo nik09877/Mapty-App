@@ -1,10 +1,13 @@
 'use strict';
+
 class Workout {
   date = new Date();
   id = (Date.now() + '').slice(-10);
   clicks = 0;
 
   constructor(coords, distance, duration) {
+    // this.date = ...
+    // this.id = ...
     this.coords = coords; // [lat, lng]
     this.distance = distance; // in km
     this.duration = duration; // in min
@@ -59,10 +62,12 @@ class Cycling extends Workout {
   }
 }
 
-////////////////////////////
-//------------APP ARCHITECTURE-------------------//
+// const run1 = new Running([39, -12], 5.2, 24, 178);
+// const cycling1 = new Cycling([39, -12], 27, 95, 523);
+// console.log(run1, cycling1);
 
-//----------------Elements----------------------//
+///////////////////////////////////////
+// APPLICATION ARCHITECTURE
 const form = document.querySelector('.form');
 const containerWorkouts = document.querySelector('.workouts');
 const inputType = document.querySelector('.form__input--type');
@@ -70,7 +75,6 @@ const inputDistance = document.querySelector('.form__input--distance');
 const inputDuration = document.querySelector('.form__input--duration');
 const inputCadence = document.querySelector('.form__input--cadence');
 const inputElevation = document.querySelector('.form__input--elevation');
-//----------------Elements----------------------//
 
 class App {
   #map;
@@ -104,6 +108,7 @@ class App {
   _loadMap(position) {
     const { latitude } = position.coords;
     const { longitude } = position.coords;
+    // console.log(`https://www.google.pt/maps/@${latitude},${longitude}`);
 
     const coords = [latitude, longitude];
 
@@ -166,6 +171,9 @@ class App {
 
       // Check if data is valid
       if (
+        // !Number.isFinite(distance) ||
+        // !Number.isFinite(duration) ||
+        // !Number.isFinite(cadence)
         !validInputs(distance, duration, cadence) ||
         !allPositive(distance, duration, cadence)
       )
@@ -316,6 +324,5 @@ class App {
     location.reload();
   }
 }
+
 const app = new App();
-//------------APP ARCHITECTURE-------------------//
-////////////////////////////
