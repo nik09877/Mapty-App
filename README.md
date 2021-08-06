@@ -7,5 +7,5 @@ This is a practice project that I did to strengthen my javascript knowledge.\
 I used\
 Vanilla Js\
 GeoLocation API\
-LeafLet Library\ 
+LeafLet Library
 
