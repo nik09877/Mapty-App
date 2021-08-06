@@ -1,9 +1,9 @@
-# Mapty-App
-This is a practice project that I did to strengthen my javascript knowledge.
+# Check Out The App Here
 
-I used -:
-1.GeoLocation API 
-2.LeafLet Library        
+[Mapty-Workout](https://mapty-workout-1-0-0.netlify.app/).
 
-
-I Will Be Adding New Functionalities In The Future.
+## Project Description
+This is a practice project that I did to strengthen my javascript knowledge.\
+I used -:\
+1.GeoLocation API.\ 
+2.LeafLet Library.
